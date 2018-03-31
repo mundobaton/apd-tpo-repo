@@ -3,7 +3,8 @@ package edu.uade.apd.tpo.repository.stub;
 
 public class ClienteStub extends BaseStub {
 
-    public String nombre;
+    private String nombre;
+    private DomicilioStub domicilio;
 
     public String getNombre() {
         return nombre;
@@ -13,5 +14,11 @@ public class ClienteStub extends BaseStub {
         this.nombre = nombre;
     }
 
+    public DomicilioStub getDomicilio() {
+        return domicilio;
+    }
 
+    public void setDomicilio(DomicilioStub domicilio) {
+        this.domicilio = domicilio;
+    }
 }

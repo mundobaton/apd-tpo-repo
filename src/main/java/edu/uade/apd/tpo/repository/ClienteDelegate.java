@@ -26,8 +26,10 @@ public class ClienteDelegate {
             ClienteDelegate delegate = new ClienteDelegate();
             ClienteStub stub = delegate.login(123L, "asd");
             System.out.println(stub.getNombre());
+            System.out.println(stub.getDomicilio().getCalle());
 
             stub.setNombre("Otro nombre");
+            stub.getDomicilio().setCalle("otra calle");
             delegate.test(stub);
         } catch (Exception e) {
             e.printStackTrace();
