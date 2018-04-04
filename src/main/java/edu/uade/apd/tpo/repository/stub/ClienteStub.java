@@ -1,7 +1,6 @@
 package edu.uade.apd.tpo.repository.stub;
 
-
-public class ClienteStub extends BaseStub {
+public class ClienteStub extends UsuarioStub {
 
     private String nombre;
     private DomicilioStub domicilio;
