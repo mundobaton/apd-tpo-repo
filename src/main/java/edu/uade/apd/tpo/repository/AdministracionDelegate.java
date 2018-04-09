@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository;
 
 import edu.uade.apd.tpo.repository.stub.ClienteStub;
+import edu.uade.apd.tpo.repository.stub.DomicilioStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
 
 import java.rmi.Naming;
@@ -18,11 +19,22 @@ public class AdministracionDelegate {
         return sistemaAdministracionRepository.login(email, password);
     }
 
+    public ClienteStub crearCliente(String email, String password, DomicilioStub dom) throws RemoteException {
+        return sistemaAdministracionRepository.crearCliente(email, password, dom);
+    }
+
     public static void main(String[] args) {
         try {
             AdministracionDelegate delegate = new AdministracionDelegate();
             UsuarioStub stub = delegate.login("asd@email.com", "asd");
             System.out.println(stub.getPassword());
+
+            DomicilioStub dom = new DomicilioStub();
+            dom.setCalle("Fake st 123");
+
+            ClienteStub clienteStub = delegate.crearCliente("blabla@email.com", "un password", dom);
+            System.out.println(clienteStub);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
