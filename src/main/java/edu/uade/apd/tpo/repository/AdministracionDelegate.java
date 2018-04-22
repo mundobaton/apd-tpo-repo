@@ -6,6 +6,8 @@ import edu.uade.apd.tpo.repository.stub.UsuarioStub;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.List;
+import java.util.UUID;
 
 public class AdministracionDelegate {
 
@@ -15,26 +17,35 @@ public class AdministracionDelegate {
         sistemaAdministracionRepository = (SistemaAdministracionRepository) Naming.lookup("//127.0.0.1/administracion");
     }
 
-    public UsuarioStub login(String email, String password) throws RemoteException {
-        return sistemaAdministracionRepository.login(email, password);
+    public void crearUsuario(String email, String password) {
+        try {
+            sistemaAdministracionRepository.crearUsuario(email, password);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public ClienteStub crearCliente(String email, String password, DomicilioStub dom) throws RemoteException {
-        return sistemaAdministracionRepository.crearCliente(email, password, dom);
+    public List<UsuarioStub> getUsuarios() {
+        List usuarios = null;
+        try {
+            usuarios = sistemaAdministracionRepository.getUsuarios();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return usuarios;
     }
 
     public static void main(String[] args) {
+        AdministracionDelegate delegate;
         try {
-            AdministracionDelegate delegate = new AdministracionDelegate();
-            UsuarioStub stub = delegate.login("asd@email.com", "asd");
-            System.out.println(stub.getPassword());
+            delegate = new AdministracionDelegate();
+            String random = UUID.randomUUID().toString();
+            delegate.crearUsuario(random + "@email.com", random);
 
-            DomicilioStub dom = new DomicilioStub();
-            dom.setCalle("Fake st 123");
-
-            ClienteStub clienteStub = delegate.crearCliente("blabla@email.com", "un password", dom);
-            System.out.println(clienteStub);
-
+            List<UsuarioStub> usuarios = delegate.getUsuarios();
+            usuarios.forEach(u -> {
+                System.out.println(u.getEmail());
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }
