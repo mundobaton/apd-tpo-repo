@@ -25,6 +25,14 @@ public class AdministracionDelegate {
         }
     }
 
+    public void actualizarUsuario(UsuarioStub usuarioStub) {
+        try {
+            sistemaAdministracionRepository.actualizarUsuario(usuarioStub);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<UsuarioStub> getUsuarios() {
         List usuarios = null;
         try {
@@ -46,6 +54,11 @@ public class AdministracionDelegate {
             usuarios.forEach(u -> {
                 System.out.println(u.getEmail());
             });
+
+            UsuarioStub stub = usuarios.get(0);
+            stub.setEmail("sarasa@email.com");
+            delegate.actualizarUsuario(stub);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -2,8 +2,17 @@ package edu.uade.apd.tpo.repository.stub;
 
 public class UsuarioStub extends BaseStub {
 
+    private long id;
     private String email;
     private String password;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;

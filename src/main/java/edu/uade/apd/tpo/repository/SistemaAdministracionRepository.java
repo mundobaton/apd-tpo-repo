@@ -10,9 +10,11 @@ import java.util.List;
 
 public interface SistemaAdministracionRepository extends Remote {
 
-    public void crearUsuario(String email, String password) throws RemoteException;
+    void crearUsuario(String email, String password) throws RemoteException;
 
-    public List<UsuarioStub> getUsuarios() throws RemoteException;
+    List<UsuarioStub> getUsuarios() throws RemoteException;
+
+    void actualizarUsuario(UsuarioStub usuarioStub) throws RemoteException;
 /*
     UsuarioStub login(String email, String password) throws RemoteException;
 
