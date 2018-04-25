@@ -43,22 +43,19 @@ public class AdministracionDelegate {
         return usuarios;
     }
 
-    public static void main(String[] args) {
-        AdministracionDelegate delegate;
+    public List<ClienteStub> getClientes() {
+        List clientes = null;
         try {
-            delegate = new AdministracionDelegate();
-            String random = UUID.randomUUID().toString();
-            delegate.crearUsuario(random + "@email.com", random);
+            clientes = sistemaAdministracionRepository.getClientes();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return clientes;
+    }
 
-            List<UsuarioStub> usuarios = delegate.getUsuarios();
-            usuarios.forEach(u -> {
-                System.out.println(u.getEmail());
-            });
-
-            UsuarioStub stub = usuarios.get(0);
-            stub.setEmail("sarasa@email.com");
-            delegate.actualizarUsuario(stub);
-
+    public void crearCliente(String email, String password, String nombre, long cuil, String telefono) {
+        try {
+            sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono);
         } catch (Exception e) {
             e.printStackTrace();
         }

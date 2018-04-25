@@ -14,10 +14,10 @@ public interface SistemaAdministracionRepository extends Remote {
 
     List<UsuarioStub> getUsuarios() throws RemoteException;
 
-    void actualizarUsuario(UsuarioStub usuarioStub) throws RemoteException;
-/*
-    UsuarioStub login(String email, String password) throws RemoteException;
+    List<ClienteStub> getClientes() throws RemoteException;
 
-    ClienteStub crearCliente(String email, String password, DomicilioStub dom) throws RemoteException;
-*/
+    void actualizarUsuario(UsuarioStub usuarioStub) throws RemoteException;
+
+    void crearCliente(String email, String password, String nombre, long cuil, String telefono) throws RemoteException;
+
 }
