@@ -1,7 +1,9 @@
 package edu.uade.apd.tpo.repository;
 
 import edu.uade.apd.tpo.repository.stub.ClienteStub;
+import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.DomicilioStub;
+import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
 
 import java.rmi.Naming;
@@ -17,9 +19,9 @@ public class AdministracionDelegate {
         sistemaAdministracionRepository = (SistemaAdministracionRepository) Naming.lookup("//127.0.0.1/administracion");
     }
 
-    public void crearUsuario(String email, String password) {
+    public void crearUsuario(String email, String password, RolStub rol) {
         try {
-            sistemaAdministracionRepository.crearUsuario(email, password);
+            sistemaAdministracionRepository.crearUsuario(email, password, rol);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,9 +55,9 @@ public class AdministracionDelegate {
         return clientes;
     }
 
-    public void crearCliente(String email, String password, String nombre, long cuil, String telefono) {
+    public void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, float saldo, float limiteCredito) {
         try {
-            sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono);
+            sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono, condIva, calle, numero, codPostal, localidad, provincia, saldo, limiteCredito);
         } catch (Exception e) {
             e.printStackTrace();
         }

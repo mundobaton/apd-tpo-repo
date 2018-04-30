@@ -5,6 +5,7 @@ public class UsuarioStub extends BaseStub {
     protected long id;
     protected String email;
     protected String password;
+    protected RolStub rol;
 
     public long getId() {
         return id;
@@ -28,5 +29,13 @@ public class UsuarioStub extends BaseStub {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public RolStub getRol() {
+        return rol;
+    }
+
+    public void setRol(RolStub rol) {
+        this.rol = rol;
     }
 }

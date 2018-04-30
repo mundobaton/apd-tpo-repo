@@ -6,6 +6,8 @@ public class ClienteStub extends UsuarioStub {
     private long cuil;
     private String telefono;
     private DomicilioStub domicilio;
+    private CondIvaStub condIva;
+    private CuentaCorrienteStub cuentaCorriente;
 
     public String getNombre() {
         return nombre;
@@ -37,6 +39,22 @@ public class ClienteStub extends UsuarioStub {
 
     public void setDomicilio(DomicilioStub domicilio) {
         this.domicilio = domicilio;
+    }
+
+    public CondIvaStub getCondIva() {
+        return condIva;
+    }
+
+    public void setCondIva(CondIvaStub condIva) {
+        this.condIva = condIva;
+    }
+
+    public CuentaCorrienteStub getCuentaCorriente() {
+        return cuentaCorriente;
+    }
+
+    public void setCuentaCorriente(CuentaCorrienteStub cuentaCorriente) {
+        this.cuentaCorriente = cuentaCorriente;
     }
 
     @Override
