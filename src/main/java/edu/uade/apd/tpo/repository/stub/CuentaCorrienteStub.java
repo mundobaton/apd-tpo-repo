@@ -3,8 +3,8 @@ package edu.uade.apd.tpo.repository.stub;
 public class CuentaCorrienteStub extends BaseStub {
 
     private Long id;
-    private float saldo;
-    private float limiteCredito;
+    private Float saldo;
+    private Float limiteCredito;
 
     public Long getId() {
         return id;
@@ -14,19 +14,19 @@ public class CuentaCorrienteStub extends BaseStub {
         this.id = id;
     }
 
-    public float getSaldo() {
+    public Float getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(Float saldo) {
         this.saldo = saldo;
     }
 
-    public float getLimiteCredito() {
+    public Float getLimiteCredito() {
         return limiteCredito;
     }
 
-    public void setLimiteCredito(float limiteCredito) {
+    public void setLimiteCredito(Float limiteCredito) {
         this.limiteCredito = limiteCredito;
     }
 }

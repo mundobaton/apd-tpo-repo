@@ -3,7 +3,7 @@ package edu.uade.apd.tpo.repository.stub;
 public class ClienteStub extends UsuarioStub {
 
     private String nombre;
-    private long cuil;
+    private Long cuil;
     private String telefono;
     private DomicilioStub domicilio;
     private CondIvaStub condIva;
@@ -17,11 +17,11 @@ public class ClienteStub extends UsuarioStub {
         this.nombre = nombre;
     }
 
-    public long getCuil() {
+    public Long getCuil() {
         return cuil;
     }
 
-    public void setCuil(long cuil) {
+    public void setCuil(Long cuil) {
         this.cuil = cuil;
     }
 
