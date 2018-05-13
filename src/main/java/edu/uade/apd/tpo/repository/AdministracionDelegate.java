@@ -12,10 +12,19 @@ import java.util.List;
 import java.util.UUID;
 
 public class AdministracionDelegate {
+	
+	private static AdministracionDelegate instance;
 
     private SistemaAdministracionRepository sistemaAdministracionRepository;
+    
+	public static AdministracionDelegate getInstance() throws Exception {
+		if (instance == null) {
+			instance = new AdministracionDelegate();
+		}
+		return instance;
+	}
 
-    public AdministracionDelegate() throws Exception {
+    private AdministracionDelegate() throws Exception {
         sistemaAdministracionRepository = (SistemaAdministracionRepository) Naming.lookup("//127.0.0.1/administracion");
     }
 

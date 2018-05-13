@@ -37,7 +37,7 @@ public class DelegateTest {
     public static void main(String[] args) {
         AdministracionDelegate delegate;
         try {
-            delegate = new AdministracionDelegate();
+            delegate = AdministracionDelegate.getInstance();
             DelegateTest test = new DelegateTest();
             //test.testCrearUsuario(delegate);
             //test.testListarUsuarios(delegate);
