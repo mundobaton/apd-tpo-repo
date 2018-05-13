@@ -5,6 +5,7 @@ import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.DomicilioStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
+import edu.uade.apd.tpo.repository.stub.ZonaEnvioStub;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -64,9 +65,9 @@ public class AdministracionDelegate {
         return clientes;
     }
 
-    public void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, float saldo, float limiteCredito) {
+    public void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, ZonaEnvioStub zona, float saldo, float limiteCredito) {
         try {
-            sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono, condIva, calle, numero, codPostal, localidad, provincia, saldo, limiteCredito);
+            sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono, condIva, calle, numero, codPostal, localidad, provincia, zona, saldo, limiteCredito);
         } catch (Exception e) {
             e.printStackTrace();
         }

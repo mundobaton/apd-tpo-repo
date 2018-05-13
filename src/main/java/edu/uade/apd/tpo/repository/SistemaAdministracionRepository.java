@@ -5,6 +5,7 @@ import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.DomicilioStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
+import edu.uade.apd.tpo.repository.stub.ZonaEnvioStub;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -20,6 +21,6 @@ public interface SistemaAdministracionRepository extends Remote {
 
     void actualizarUsuario(UsuarioStub usuarioStub) throws RemoteException;
 
-    void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, float saldo, float limiteCredito) throws RemoteException;
+    void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, ZonaEnvioStub zona, float saldo, float limiteCredito) throws RemoteException;
 
 }
