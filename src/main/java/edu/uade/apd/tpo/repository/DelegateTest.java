@@ -36,9 +36,13 @@ public class DelegateTest {
     }
 
     public void testGenerarPedido(AdministracionDelegate delegate) {
-    //	String random = UUID.randomUUID().toString();
-    	delegate.generarPedido("melaTest@melaTest.com", "CalleMela", 1233, "7098", "Buenos aires", "Caba", ZonaEnvioStub.NORTE);
+    	String random = UUID.randomUUID().toString();
+    	delegate.generarPedido("melaTest@melaTest.com", random, 1233, "7098", "Buenos aires", "Caba", ZonaEnvioStub.NORTE);
    
+    }
+    
+    public void testAgregarItemPedido(AdministracionDelegate delegate) {
+    	//delegate.agregarItemPedido(, 1, 1);
     }
     
     public static void main(String[] args) {
@@ -50,7 +54,8 @@ public class DelegateTest {
             //test.testListarUsuarios(delegate);
             //test.testCrearCliente(delegate);
             //test.testListarClientes(delegate);
-            test.testGenerarPedido(delegate);
+            //test.testGenerarPedido(delegate);
+            test.testAgregarItemPedido(delegate);
             
         } catch (Exception e) {
             e.printStackTrace();

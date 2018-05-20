@@ -3,6 +3,7 @@ package edu.uade.apd.tpo.repository;
 import edu.uade.apd.tpo.repository.stub.ClienteStub;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.DomicilioStub;
+import edu.uade.apd.tpo.repository.stub.PedidoStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
 import edu.uade.apd.tpo.repository.stub.ZonaEnvioStub;
@@ -13,11 +14,11 @@ import java.util.List;
 import java.util.UUID;
 
 public class AdministracionDelegate {
-	
+
 	private static AdministracionDelegate instance;
 
-    private SistemaAdministracionRepository sistemaAdministracionRepository;
-    
+	private SistemaAdministracionRepository sistemaAdministracionRepository;
+
 	public static AdministracionDelegate getInstance() throws Exception {
 		if (instance == null) {
 			instance = new AdministracionDelegate();
@@ -25,60 +26,83 @@ public class AdministracionDelegate {
 		return instance;
 	}
 
-    private AdministracionDelegate() throws Exception {
-        sistemaAdministracionRepository = (SistemaAdministracionRepository) Naming.lookup("//127.0.0.1/administracion");
-    }
+	private AdministracionDelegate() throws Exception {
+		sistemaAdministracionRepository = (SistemaAdministracionRepository) Naming.lookup("//127.0.0.1/administracion");
+	}
 
-    public void crearUsuario(String email, String password, RolStub rol) {
-        try {
-            sistemaAdministracionRepository.crearUsuario(email, password, rol);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+	public void crearUsuario(String email, String password, RolStub rol) {
+		try {
+			sistemaAdministracionRepository.crearUsuario(email, password, rol);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-    public void actualizarUsuario(UsuarioStub usuarioStub) {
-        try {
-            sistemaAdministracionRepository.actualizarUsuario(usuarioStub);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+	public void actualizarUsuario(UsuarioStub usuarioStub) {
+		try {
+			sistemaAdministracionRepository.actualizarUsuario(usuarioStub);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-    public List<UsuarioStub> getUsuarios() {
-        List usuarios = null;
-        try {
-            usuarios = sistemaAdministracionRepository.getUsuarios();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return usuarios;
-    }
+	public List<UsuarioStub> getUsuarios() {
+		List usuarios = null;
+		try {
+			usuarios = sistemaAdministracionRepository.getUsuarios();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return usuarios;
+	}
 
-    public List<ClienteStub> getClientes() {
-        List clientes = null;
-        try {
-            clientes = sistemaAdministracionRepository.getClientes();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return clientes;
-    }
+	public List<ClienteStub> getClientes() {
+		List clientes = null;
+		try {
+			clientes = sistemaAdministracionRepository.getClientes();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return clientes;
+	}
 
-    public void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, ZonaEnvioStub zona, float saldo, float limiteCredito) {
-        try {
-            sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono, condIva, calle, numero, codPostal, localidad, provincia, zona, saldo, limiteCredito);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public void generarPedido(String email, String calle, int num, String codPostal, String localidad, String prov, ZonaEnvioStub zona) {
-    	try {
-    		sistemaAdministracionRepository.generarPedido(email, calle, num, codPostal, localidad, prov, zona);
-    	   } catch (Exception e) {
-               e.printStackTrace();
-           }
-    	}
-    }
+	public void crearCliente(String email, String password, String nombre, long cuil, String telefono,
+			CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia,
+			ZonaEnvioStub zona, float saldo, float limiteCredito) {
+		try {
+			sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono, condIva, calle,
+					numero, codPostal, localidad, provincia, zona, saldo, limiteCredito);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+	public void generarPedido(String email, String calle, int num, String codPostal, String localidad, String prov,
+			ZonaEnvioStub zona) {
+		try {
+			sistemaAdministracionRepository.generarPedido(email, calle, num, codPostal, localidad, prov, zona);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void agregarItemPedido(Long pedidoId, Long articuloId , int cantidad) {
+		try {
+			sistemaAdministracionRepository.agregarItemPedido(pedidoId, articuloId, cantidad);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	
+	public List<PedidoStub> getPedidosPendientes() {
+		List pedidosPendientes = null;
+		try {
+			pedidosPendientes = sistemaAdministracionRepository.getPedidosPendientes();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pedidosPendientes;
+	}
+}
