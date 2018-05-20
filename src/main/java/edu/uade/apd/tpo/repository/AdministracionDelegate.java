@@ -72,4 +72,13 @@ public class AdministracionDelegate {
             e.printStackTrace();
         }
     }
-}
+    
+    public void generarPedido(String email, String calle, int num, String codPostal, String localidad, String prov, ZonaEnvioStub zona) {
+    	try {
+    		sistemaAdministracionRepository.generarPedido(email, calle, num, codPostal, localidad, prov, zona);
+    	   } catch (Exception e) {
+               e.printStackTrace();
+           }
+    	}
+    }
+

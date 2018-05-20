@@ -13,7 +13,7 @@ public class DelegateTest {
 
     public void testCrearUsuario(AdministracionDelegate delegate) {
         String random = UUID.randomUUID().toString();
-        delegate.crearUsuario(random + "@email.com", random, RolStub.ADMINISTRACION);
+        delegate.crearUsuario(random + "@email.com", random, RolStub.ADMIN);
     }
 
     public void testListarUsuarios(AdministracionDelegate delegate) {

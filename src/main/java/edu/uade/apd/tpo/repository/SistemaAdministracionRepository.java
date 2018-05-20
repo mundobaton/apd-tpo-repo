@@ -23,4 +23,7 @@ public interface SistemaAdministracionRepository extends Remote {
 
     void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, ZonaEnvioStub zona, float saldo, float limiteCredito) throws RemoteException;
 
+	void generarPedido(String email, String calle, int num, String codPostal, String localidad, String prov, ZonaEnvioStub zona) throws RemoteException;
+
+	
 }
