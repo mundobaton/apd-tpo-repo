@@ -35,6 +35,12 @@ public class DelegateTest {
         });
     }
 
+    public void testGenerarPedido(AdministracionDelegate delegate) {
+    //	String random = UUID.randomUUID().toString();
+    	delegate.generarPedido("melaTest@melaTest.com", "CalleMela", 1233, "7098", "Buenos aires", "Caba", ZonaEnvioStub.NORTE);
+   
+    }
+    
     public static void main(String[] args) {
         AdministracionDelegate delegate;
         try {
@@ -42,8 +48,10 @@ public class DelegateTest {
             DelegateTest test = new DelegateTest();
             //test.testCrearUsuario(delegate);
             //test.testListarUsuarios(delegate);
-            test.testCrearCliente(delegate);
+            //test.testCrearCliente(delegate);
             //test.testListarClientes(delegate);
+            test.testGenerarPedido(delegate);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
