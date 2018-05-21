@@ -42,8 +42,8 @@ public class DelegateTest {
             DelegateTest test = new DelegateTest();
             //test.testCrearUsuario(delegate);
             //test.testListarUsuarios(delegate);
-            test.testCrearCliente(delegate);
-            //test.testListarClientes(delegate);
+            //test.testCrearCliente(delegate);
+            test.testListarClientes(delegate);
         } catch (Exception e) {
             e.printStackTrace();
         }

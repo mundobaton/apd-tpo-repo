@@ -3,6 +3,7 @@ package edu.uade.apd.tpo.repository;
 import edu.uade.apd.tpo.repository.stub.ClienteStub;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.DomicilioStub;
+import edu.uade.apd.tpo.repository.stub.PedidoStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
 import edu.uade.apd.tpo.repository.stub.ZonaEnvioStub;
@@ -22,5 +23,11 @@ public interface SistemaAdministracionRepository extends Remote {
     void actualizarUsuario(UsuarioStub usuarioStub) throws RemoteException;
 
     void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, ZonaEnvioStub zona, float saldo, float limiteCredito) throws RemoteException;
+
+    void generarPedido(String email, String calle, int num, String codPostal, String localidad, String prov, ZonaEnvioStub zona) throws RemoteException;
+
+    void agregarItemPedido(Long pedidoId, Long articuloId, int cant)  throws RemoteException;
+
+    List<PedidoStub> getPedidosPendientes() throws RemoteException;
 
 }
