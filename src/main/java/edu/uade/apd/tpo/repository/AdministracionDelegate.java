@@ -2,6 +2,7 @@ package edu.uade.apd.tpo.repository;
 
 import edu.uade.apd.tpo.repository.stub.ClienteStub;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
+import edu.uade.apd.tpo.repository.stub.PedidoStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
 import edu.uade.apd.tpo.repository.stub.ZonaStub;
@@ -69,4 +70,15 @@ public class AdministracionDelegate {
             e.printStackTrace();
         }
     }
+
+	public List<PedidoStub> getPedidosPendientes() {
+		   List pedidosPendientes = null;
+	        try {
+	        	pedidosPendientes = sistemaAdministracionRepository.getPedidosPendientes();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return pedidosPendientes;
+		
+	}
 }
