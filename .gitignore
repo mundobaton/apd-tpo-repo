@@ -3,3 +3,5 @@
 *.class
 .idea
 *.iml
+*.properties
+*.properties
