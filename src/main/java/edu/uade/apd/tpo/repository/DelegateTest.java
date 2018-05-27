@@ -4,7 +4,7 @@ import edu.uade.apd.tpo.repository.stub.ClienteStub;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.UsuarioStub;
-import edu.uade.apd.tpo.repository.stub.ZonaEnvioStub;
+import edu.uade.apd.tpo.repository.stub.ZonaStub;
 
 import java.util.List;
 import java.util.UUID;
@@ -25,7 +25,7 @@ public class DelegateTest {
 
     public void testCrearCliente(AdministracionDelegate delegate) {
         String random = UUID.randomUUID().toString();
-        delegate.crearCliente(random + "@email.com", random, "un nombre fake", 123123, "1234-5678", CondIvaStub.CONS_FINAL, "Fake St", 123, "1406", "cap-fed", "buenos aires", ZonaEnvioStub.CABA, 0, 1500);
+        delegate.crearCliente(random + "@email.com", random, "un nombre fake", 123123, "1234-5678", CondIvaStub.CONS_FINAL, "Fake St", 123, "1406", "cap-fed", "buenos aires", ZonaStub.CABA, 0, 1500);
     }
 
     public void testListarClientes(AdministracionDelegate delegate) {

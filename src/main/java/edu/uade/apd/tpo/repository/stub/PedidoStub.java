@@ -9,10 +9,11 @@ public class PedidoStub extends BaseStub {
     private Date fechaPedido;
     private Date fechaEntrega;
     private Date fechaDespacho;
-    //private List<ItemPedido> items;
-    private ClienteStub cliente;
-    private DomicilioStub domicilio;
+    private List<ItemPedidoStub> items;
     private List<EstadoStub> estados;
+    private ClienteStub cliente;
+    private FacturaStub factura;
+    private EnvioStub envio;
 
     public Long getId() {
         return id;
@@ -46,20 +47,12 @@ public class PedidoStub extends BaseStub {
         this.fechaDespacho = fechaDespacho;
     }
 
-    public ClienteStub getCliente() {
-        return cliente;
+    public List<ItemPedidoStub> getItems() {
+        return items;
     }
 
-    public void setCliente(ClienteStub cliente) {
-        this.cliente = cliente;
-    }
-
-    public DomicilioStub getDomicilio() {
-        return domicilio;
-    }
-
-    public void setDomicilio(DomicilioStub domicilio) {
-        this.domicilio = domicilio;
+    public void setItems(List<ItemPedidoStub> items) {
+        this.items = items;
     }
 
     public List<EstadoStub> getEstados() {
@@ -68,5 +61,29 @@ public class PedidoStub extends BaseStub {
 
     public void setEstados(List<EstadoStub> estados) {
         this.estados = estados;
+    }
+
+    public ClienteStub getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ClienteStub cliente) {
+        this.cliente = cliente;
+    }
+
+    public FacturaStub getFactura() {
+        return factura;
+    }
+
+    public void setFactura(FacturaStub factura) {
+        this.factura = factura;
+    }
+
+    public EnvioStub getEnvio() {
+        return envio;
+    }
+
+    public void setEnvio(EnvioStub envio) {
+        this.envio = envio;
     }
 }

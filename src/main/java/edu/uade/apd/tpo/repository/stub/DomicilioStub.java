@@ -4,10 +4,11 @@ public class DomicilioStub extends BaseStub {
 
     private Long id;
     private String calle;
-    private Integer numero;
+    private Long numero;
     private String codPostal;
     private String localidad;
     private String provincia;
+    private ZonaStub zona;
 
     public Long getId() {
         return id;
@@ -25,11 +26,11 @@ public class DomicilioStub extends BaseStub {
         this.calle = calle;
     }
 
-    public Integer getNumero() {
+    public Long getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(Long numero) {
         this.numero = numero;
     }
 
@@ -55,5 +56,13 @@ public class DomicilioStub extends BaseStub {
 
     public void setProvincia(String provincia) {
         this.provincia = provincia;
+    }
+
+    public ZonaStub getZona() {
+        return zona;
+    }
+
+    public void setZona(ZonaStub zona) {
+        this.zona = zona;
     }
 }
