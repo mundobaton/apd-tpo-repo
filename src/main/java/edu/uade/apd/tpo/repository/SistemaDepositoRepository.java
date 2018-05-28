@@ -11,4 +11,6 @@ public interface SistemaDepositoRepository extends Remote {
 
     void completarPedido(Long pedidoId) throws RemoteException;
 
+    void aceptarOrdenCompra(Long ordenCompraId) throws RemoteException;
+
 }

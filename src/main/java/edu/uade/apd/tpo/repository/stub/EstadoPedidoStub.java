@@ -10,5 +10,6 @@ public enum EstadoPedidoStub {
     VERIFICADO,
     COPMPLETO,
     LISTO,
-    ENVIADO
+    ENVIADO,
+    COMPLETO
 }

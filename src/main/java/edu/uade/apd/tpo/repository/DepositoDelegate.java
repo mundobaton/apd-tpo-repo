@@ -23,5 +23,9 @@ public class DepositoDelegate {
         sistemaDepositoRepository.completarPedido(pedidoId);
     }
 
+    public void aceptarOrdenCompra(Long ordenCompraId) throws RemoteException {
+        sistemaDepositoRepository.aceptarOrdenCompra(ordenCompraId);
+    }
+
 
 }

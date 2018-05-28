@@ -18,4 +18,10 @@ public class ComprasDelegateTest {
     public void generarOrdenCompra() throws RemoteException {
         delegate.generarOrdenCompra(123L, 321L);
     }
+
+    @Test
+    //Este metodo solo hay que llamarlo luego de reaizar el ingreso de una compra en deposito
+    public void aceptarOrdenCompra() throws RemoteException {
+        delegate.aceptarOrdenCompra(27L);
+    }
 }

@@ -1,7 +1,7 @@
 package edu.uade.apd.tpo.repository;
 
+import edu.uade.apd.tpo.repository.stub.ClienteStub;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
-import edu.uade.apd.tpo.repository.stub.PedidoStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.ZonaStub;
 import org.junit.Assert;
@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.rmi.RemoteException;
+import java.util.List;
 
 public class AdministracionDelegateTest {
 
@@ -36,6 +37,11 @@ public class AdministracionDelegateTest {
     }
 
     @Test
+    public void testEliminarItemPedido() throws RemoteException {
+        delegate.eliminarItemPedido(123L, 456L);
+    }
+
+    @Test
     public void agregarItemPedido() throws RemoteException {
         delegate.agregarItemPedido(47L, 3123123132L, 29L, 20);
     }
@@ -48,5 +54,21 @@ public class AdministracionDelegateTest {
     @Test
     public void aprobarPedido() throws RemoteException {
         delegate.aprobarPedido(47L, 3123123132L, "Cliente fiel");
+    }
+
+    @Test
+    public void testCrearArticulo() throws RemoteException {
+        delegate.crearArticulo("234555", "Bombilla", "Caja", "10 unidades", 10, 1, 25);
+    }
+
+    @Test
+    public void procesarPedidosPendientes() throws RemoteException {
+        delegate.procesarPedidosPendientes();
+    }
+
+    @Test
+    public void testListarClientes() throws RemoteException {
+        List<ClienteStub> clientes = delegate.getClientes();
+        Assert.assertNotNull(clientes);
     }
 }

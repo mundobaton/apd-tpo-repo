@@ -1,11 +1,13 @@
 package edu.uade.apd.tpo.repository;
 
+import edu.uade.apd.tpo.repository.stub.ClienteStub;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.ZonaStub;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public class AdministracionDelegate {
 
@@ -49,5 +51,21 @@ public class AdministracionDelegate {
 
     public void aprobarPedido(Long pedidoId, Long cuil, String motivo) throws RemoteException {
         sistemaAdministracionRepository.aprobarPedido(pedidoId, cuil, motivo);
+    }
+
+    public void eliminarItemPedido(Long pedidoId, Long articuloId) throws RemoteException {
+        sistemaAdministracionRepository.eliminarItemPedido(pedidoId, articuloId);
+    }
+
+    public void crearArticulo(String codBarras, String descripcion, String presentacion, String unidad, int cantCompra, int volumen, float precio) throws RemoteException {
+        sistemaAdministracionRepository.crearArticulo(codBarras, descripcion, presentacion, unidad, cantCompra, volumen, precio);
+    }
+
+    public void procesarPedidosPendientes() throws RemoteException {
+        sistemaAdministracionRepository.procesarPedidosPendientes();
+    }
+
+    public List<ClienteStub> getClientes() throws RemoteException {
+        return sistemaAdministracionRepository.getClientes();
     }
 }

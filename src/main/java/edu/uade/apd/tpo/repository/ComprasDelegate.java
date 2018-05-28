@@ -23,4 +23,8 @@ public class ComprasDelegate {
     public void generarOrdenCompra(Long articuloId, Long pedidoId) throws RemoteException {
         sistemaComprasRepository.generarOrdenCompra(articuloId, pedidoId);
     }
+
+    public void aceptarOrdenCompra(Long ordenCompraId) throws RemoteException {
+        sistemaComprasRepository.aceptarOrdenCompra(ordenCompraId);
+    }
 }

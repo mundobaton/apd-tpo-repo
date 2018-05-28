@@ -4,6 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
 
 public class DepositoDelegateTest {
 
@@ -15,8 +19,12 @@ public class DepositoDelegateTest {
     }
 
     @Test
-    public void testCompletarPedido() throws RemoteException {
+    public void completarPedido() throws RemoteException {
         delegate.completarPedido(123L);
     }
 
+    @Test
+    public void testAceptarOrdenCompra() throws RemoteException {
+        delegate.aceptarOrdenCompra(1L);
+    }
 }

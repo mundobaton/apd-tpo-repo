@@ -10,4 +10,6 @@ public interface SistemaComprasRepository extends Remote {
 
     void generarOrdenCompra(Long articuloId, Long pedidoId) throws RemoteException;
 
+    void aceptarOrdenCompra(Long ordenCompraId) throws RemoteException;
+
 }
