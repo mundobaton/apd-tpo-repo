@@ -1,6 +1,5 @@
 package edu.uade.apd.tpo.repository;
 
-import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.ZonaStub;
@@ -34,7 +33,6 @@ public class AdministracionDelegate {
                              float limiteCredito) throws RemoteException {
         sistemaAdministracionRepository.crearCliente(cuil, email, password, nombre,
                 telefono, calle, num, cp, loc, prov, condIva, zona, saldo, limiteCredito);
-
     }
 
     public void crearPedido(Long cuil, String calle, Long num, String cp, String loc, String prov, ZonaStub zona) throws RemoteException {
