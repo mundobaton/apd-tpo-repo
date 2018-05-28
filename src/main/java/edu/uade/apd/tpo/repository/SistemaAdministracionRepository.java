@@ -1,5 +1,6 @@
 package edu.uade.apd.tpo.repository;
 
+import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 import edu.uade.apd.tpo.repository.stub.ClienteStub;
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
 import edu.uade.apd.tpo.repository.stub.PedidoStub;
@@ -15,18 +16,10 @@ public interface SistemaAdministracionRepository extends Remote {
 
     void crearUsuario(String email, String password, RolStub rol) throws RemoteException;
 
-    List<UsuarioStub> getUsuarios() throws RemoteException;
+    void crearCliente(Long cuil, String email, String password, String nombre, String telefono, String calle,
+                      Long num, String cp, String loc, String prov, CondIvaStub condIva, ZonaStub zona, float saldo,
+                      float limiteCredito) throws RemoteException;
 
-    List<ClienteStub> getClientes() throws RemoteException;
-
-    void actualizarUsuario(UsuarioStub usuarioStub) throws RemoteException;
-
-    void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, ZonaStub zona, float saldo, float limiteCredito) throws RemoteException;
-
-    void generarPedido(String email, String calle, int num, String codPostal, String localidad, String prov, ZonaStub zona) throws RemoteException;
-
-    void agregarItemPedido(Long pedidoId, Long articuloId, int cant)  throws RemoteException;
-
-    List<PedidoStub> getPedidosPendientes() throws RemoteException;
+    void crearPedido (Long cuil, String calle, Long num, String cp, String loc, String prov, ZonaStub zona) throws RemoteException;
 
 }
