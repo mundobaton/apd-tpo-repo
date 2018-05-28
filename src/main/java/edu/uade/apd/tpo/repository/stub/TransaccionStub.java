@@ -3,7 +3,8 @@ package edu.uade.apd.tpo.repository.stub;
 import java.util.Date;
 import java.util.List;
 
-public class TransaccionStub extends BaseStub{
+public class TransaccionStub extends BaseStub {
+
     private Long id;
     private float importe;
     private Date fecha;

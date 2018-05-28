@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository.stub;
 
 public class EnvioStub extends BaseStub {
+    
     private Long id;
     private DomicilioStub domicilio;
     private TransportistaStub transportista;

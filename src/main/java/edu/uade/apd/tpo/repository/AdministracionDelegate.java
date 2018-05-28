@@ -1,11 +1,13 @@
 package edu.uade.apd.tpo.repository;
 
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
+import edu.uade.apd.tpo.repository.stub.PedidoStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.ZonaStub;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public class AdministracionDelegate {
 
@@ -35,7 +37,23 @@ public class AdministracionDelegate {
                 telefono, calle, num, cp, loc, prov, condIva, zona, saldo, limiteCredito);
     }
 
-    public void crearPedido(Long cuil, String calle, Long num, String cp, String loc, String prov, ZonaStub zona) throws RemoteException {
-        sistemaAdministracionRepository.crearPedido(cuil, calle, num, cp, loc, prov, zona);
+    public Long crearPedido(Long cuil, String calle, Long num, String cp, String loc, String prov, ZonaStub zona) throws RemoteException {
+        return sistemaAdministracionRepository.crearPedido(cuil, calle, num, cp, loc, prov, zona);
+    }
+
+    public void agregarItemPedido(Long pedidoId, Long cuil, Long articuloId, int cant) throws RemoteException {
+        sistemaAdministracionRepository.agregarItemPedido(pedidoId, cuil, articuloId, cant);
+    }
+
+    public void cerrarPedido(Long pedidoId, Long cuil) throws RemoteException {
+        sistemaAdministracionRepository.cerrarPedido(pedidoId, cuil);
+    }
+
+    public void aprobarPedido(Long pedidoId, Long cuil, String motivo) throws RemoteException {
+        sistemaAdministracionRepository.aprobarPedido(pedidoId, cuil, motivo);
+    }
+
+    public List<PedidoStub> obtenerPedidosParaAprobar() {
+        return null;
     }
 }

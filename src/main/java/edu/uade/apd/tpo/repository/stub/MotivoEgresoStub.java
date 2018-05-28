@@ -6,5 +6,6 @@ public enum MotivoEgresoStub {
     RESERVA,
     DETERIORO,
     AJUSTE_INV,
-    OTROS
+    OTROS;
+
 }

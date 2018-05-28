@@ -11,7 +11,6 @@ public class FacturaStub extends BaseStub {
     private float costoEnvio;
     private static float IMPUESTOS = 0.21f;
     private float total;
-    private TransaccionStub transaccion;
 
     public Long getId() {
         return id;
@@ -67,13 +66,5 @@ public class FacturaStub extends BaseStub {
 
     public void setTotal(float total) {
         this.total = total;
-    }
-
-    public TransaccionStub getTransaccion() {
-        return transaccion;
-    }
-
-    public void setTransaccion(TransaccionStub transaccion) {
-        this.transaccion = transaccion;
     }
 }

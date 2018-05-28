@@ -5,6 +5,7 @@ import edu.uade.apd.tpo.repository.stub.*;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public interface SistemaAdministracionRepository extends Remote {
 
@@ -15,7 +16,14 @@ public interface SistemaAdministracionRepository extends Remote {
                       Long num, String cp, String loc, String prov, CondIvaStub condIva, ZonaStub zona, float saldo,
                       float limiteCredito) throws RemoteException;
 
-    void crearPedido (Long cuil, String calle, Long num, String cp, String loc, String prov, ZonaStub zona) throws RemoteException;
+    Long crearPedido (Long cuil, String calle, Long num, String cp, String loc, String prov, ZonaStub zona) throws RemoteException;
 
+    void agregarItemPedido(Long pedidoId, Long cuil, Long articuloId, int cant) throws RemoteException;
+
+    void cerrarPedido(Long pedidoId, Long cuil) throws RemoteException;
+
+    void aprobarPedido(Long pedidoId, Long cuil, String motivo) throws RemoteException;
+
+    List<PedidoStub> obtenerPedidosParaAprobar() throws RemoteException;
 
 }

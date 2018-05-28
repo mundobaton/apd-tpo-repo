@@ -2,7 +2,7 @@ package edu.uade.apd.tpo.repository.stub;
 
 import java.util.List;
 
-public class StockStub extends BaseStub{
+public class StockStub extends BaseStub {
     private Long id;
     private List<MovimientoStub> movimientos;
 

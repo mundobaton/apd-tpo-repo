@@ -3,6 +3,7 @@ package edu.uade.apd.tpo.repository.stub;
 import java.util.Date;
 
 public class OrdenCompraStub extends BaseStub {
+
     private Long id;
     private ArticuloStub articulo;
     private EstadoCompraStub estado;

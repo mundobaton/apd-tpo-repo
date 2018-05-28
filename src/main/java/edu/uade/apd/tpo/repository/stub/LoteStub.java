@@ -3,13 +3,12 @@ package edu.uade.apd.tpo.repository.stub;
 import java.util.Date;
 import java.util.List;
 
-public class LoteStub extends BaseStub{
+public class LoteStub extends BaseStub {
 
     private Long id;
     private String codigo;
     private Date fechaVto;
     private Date fechaElaboracion;
-    private ArticuloStub articulo;
     private List<PosicionStub> posiciones;
 
     public Long getId() {
@@ -42,14 +41,6 @@ public class LoteStub extends BaseStub{
 
     public void setFechaElaboracion(Date fechaElaboracion) {
         this.fechaElaboracion = fechaElaboracion;
-    }
-
-    public ArticuloStub getArticulo() {
-        return articulo;
-    }
-
-    public void setArticulo(ArticuloStub articulo) {
-        this.articulo = articulo;
     }
 
     public List<PosicionStub> getPosiciones() {

@@ -1,5 +1,7 @@
 package edu.uade.apd.tpo.repository.stub;
 
+import java.util.List;
+
 public class ClienteStub extends UsuarioStub {
 
     private String nombre;
@@ -8,6 +10,7 @@ public class ClienteStub extends UsuarioStub {
     private DomicilioStub domicilio;
     private CondIvaStub condIva;
     private CuentaCorrienteStub cuentaCorriente;
+    private List<PedidoStub> pedidos;
 
     public String getNombre() {
         return nombre;
@@ -57,18 +60,11 @@ public class ClienteStub extends UsuarioStub {
         this.cuentaCorriente = cuentaCorriente;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[Nombre:");
-        sb.append(nombre);
-        sb.append(",Cuil:");
-        sb.append(cuil);
-        sb.append(",Email:");
-        sb.append(email);
-        sb.append(",Password:");
-        sb.append(password);
-        sb.append("]");
-        return sb.toString();
+    public List<PedidoStub> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<PedidoStub> pedidos) {
+        this.pedidos = pedidos;
     }
 }

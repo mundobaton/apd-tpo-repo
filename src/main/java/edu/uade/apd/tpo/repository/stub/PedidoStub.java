@@ -1,5 +1,6 @@
 package edu.uade.apd.tpo.repository.stub;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,9 +11,8 @@ public class PedidoStub extends BaseStub {
     private Date fechaEntrega;
     private Date fechaDespacho;
     private List<ItemPedidoStub> items;
-    private List<EstadoStub> estados;
-    private ClienteStub cliente;
-    private FacturaStub factura;
+    private List<EstadoCompraStub> estados = new ArrayList<>();
+    private FacturaTipoStub factura;
     private EnvioStub envio;
 
     public Long getId() {
@@ -55,27 +55,19 @@ public class PedidoStub extends BaseStub {
         this.items = items;
     }
 
-    public List<EstadoStub> getEstados() {
+    public List<EstadoCompraStub> getEstados() {
         return estados;
     }
 
-    public void setEstados(List<EstadoStub> estados) {
+    public void setEstados(List<EstadoCompraStub> estados) {
         this.estados = estados;
     }
 
-    public ClienteStub getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(ClienteStub cliente) {
-        this.cliente = cliente;
-    }
-
-    public FacturaStub getFactura() {
+    public FacturaTipoStub getFactura() {
         return factura;
     }
 
-    public void setFactura(FacturaStub factura) {
+    public void setFactura(FacturaTipoStub factura) {
         this.factura = factura;
     }
 

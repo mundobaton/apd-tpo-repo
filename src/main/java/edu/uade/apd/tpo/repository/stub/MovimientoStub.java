@@ -2,7 +2,7 @@ package edu.uade.apd.tpo.repository.stub;
 
 import java.util.Date;
 
-public abstract class MovimientoStub extends BaseStub{
+public abstract class MovimientoStub extends BaseStub {
 
     protected Long id;
     protected Date fecha;

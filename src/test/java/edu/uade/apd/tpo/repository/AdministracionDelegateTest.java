@@ -30,7 +30,23 @@ public class AdministracionDelegateTest {
 
     @Test
     public void testCrearPedido() throws RemoteException {
-        delegate.crearPedido(3123123132L, "una calle", 123L, "1406", "Capital", "Buenos Aires", ZonaStub.CABA);
+        Long pedidoId = delegate.crearPedido(3123123132L, "una calle", 123L, "1406", "Capital", "Buenos Aires", ZonaStub.CABA);
+        Assert.assertNotNull(pedidoId);
+    }
+
+    @Test
+    public void agregarItemPedido() throws RemoteException {
+        delegate.agregarItemPedido(47L, 3123123132L, 29L, 20);
+    }
+
+    @Test
+    public void cerrarPedido() throws RemoteException {
+        delegate.cerrarPedido(47L, 3123123132L);
+    }
+
+    @Test
+    public void aprobarPedido() throws RemoteException {
+        delegate.aprobarPedido(47L, 3123123132L, "Cliente fiel");
     }
 
 }

@@ -6,7 +6,6 @@ public class ItemPedidoStub extends BaseStub {
     private Long id;
     private ArticuloStub articulo;
     private int cantidad;
-    private float subTotal;
     private List<ItemLoteStub> lotes;
 
     public Long getId() {
@@ -31,14 +30,6 @@ public class ItemPedidoStub extends BaseStub {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public float getSubTotal() {
-        return subTotal;
-    }
-
-    public void setSubTotal(float subTotal) {
-        this.subTotal = subTotal;
     }
 
     public List<ItemLoteStub> getLotes() {
