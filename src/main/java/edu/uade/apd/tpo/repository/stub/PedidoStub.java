@@ -11,8 +11,8 @@ public class PedidoStub extends BaseStub {
     private Date fechaEntrega;
     private Date fechaDespacho;
     private List<ItemPedidoStub> items;
-    private List<EstadoCompraStub> estados = new ArrayList<>();
-    private FacturaTipoStub factura;
+    private List<EstadoStub> estados = new ArrayList<>();
+    private FacturaStub factura;
     private EnvioStub envio;
 
     public Long getId() {
@@ -55,27 +55,27 @@ public class PedidoStub extends BaseStub {
         this.items = items;
     }
 
-    public List<EstadoCompraStub> getEstados() {
-        return estados;
-    }
-
-    public void setEstados(List<EstadoCompraStub> estados) {
-        this.estados = estados;
-    }
-
-    public FacturaTipoStub getFactura() {
-        return factura;
-    }
-
-    public void setFactura(FacturaTipoStub factura) {
-        this.factura = factura;
-    }
-
     public EnvioStub getEnvio() {
         return envio;
     }
 
     public void setEnvio(EnvioStub envio) {
         this.envio = envio;
+    }
+
+    public List<EstadoStub> getEstados() {
+        return estados;
+    }
+
+    public void setEstados(List<EstadoStub> estados) {
+        this.estados = estados;
+    }
+
+    public FacturaStub getFactura() {
+        return factura;
+    }
+
+    public void setFactura(FacturaStub factura) {
+        this.factura = factura;
     }
 }
