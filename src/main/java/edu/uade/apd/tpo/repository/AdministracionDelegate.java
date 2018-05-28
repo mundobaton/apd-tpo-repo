@@ -62,9 +62,9 @@ public class AdministracionDelegate {
         return clientes;
     }
 
-    public void crearCliente(String email, String password, String nombre, long cuil, String telefono, CondIvaStub condIva, String calle, int numero, String codPostal, String localidad, String provincia, ZonaStub zona, float saldo, float limiteCredito) {
+    public void crearCliente(long cuil, String email, String password, String nombre, String telefono, String calle, long num, String cp, String loc, String prov, CondIvaStub condIva, ZonaStub zona, float saldo, float limiteCredito) {
         try {
-            sistemaAdministracionRepository.crearCliente(email, password, nombre, cuil, telefono, condIva, calle, numero, codPostal, localidad, provincia, zona, saldo, limiteCredito);
+            sistemaAdministracionRepository.crearCliente(cuil, email, password, nombre, telefono, calle, num, cp, loc, prov, condIva, zona, saldo, limiteCredito);
         } catch (Exception e) {
             e.printStackTrace();
         }

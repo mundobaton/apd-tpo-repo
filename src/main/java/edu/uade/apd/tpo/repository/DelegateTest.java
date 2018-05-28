@@ -22,10 +22,10 @@ public class DelegateTest {
             System.out.println(u.getEmail());
         });
     }
-
+//long cuil, String email, String password, String nombre, String telefono, String calle, long num, String cp, String loc, String prov, CondIvaStub condIva, ZonaStub zona, float saldo, float limiteCredito
     public void testCrearCliente(AdministracionDelegate delegate) {
         String random = UUID.randomUUID().toString();
-        delegate.crearCliente(random + "@email.com", random, "un nombre fake", 123123, "1234-5678", CondIvaStub.CONS_FINAL, "Fake St", 123, "1406", "cap-fed", "buenos aires", ZonaStub.CABA, 0, 1500);
+        delegate.crearCliente(3L, random + "@email.com", "un nombre fake", random, "1234-5678", "Fake St", 123, "1406", "cap-fed", "buenos aires", CondIvaStub.CONS_FINAL, ZonaStub.CABA, 0, 1500);
     }
 
     public void testListarClientes(AdministracionDelegate delegate) {
