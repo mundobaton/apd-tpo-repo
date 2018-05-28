@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository;
 
 import edu.uade.apd.tpo.repository.stub.CondIvaStub;
+import edu.uade.apd.tpo.repository.stub.PedidoStub;
 import edu.uade.apd.tpo.repository.stub.RolStub;
 import edu.uade.apd.tpo.repository.stub.ZonaStub;
 import org.junit.Assert;
@@ -48,5 +49,4 @@ public class AdministracionDelegateTest {
     public void aprobarPedido() throws RemoteException {
         delegate.aprobarPedido(47L, 3123123132L, "Cliente fiel");
     }
-
 }

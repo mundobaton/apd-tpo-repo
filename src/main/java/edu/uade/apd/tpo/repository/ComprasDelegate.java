@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 
 public class ComprasDelegate {
 
@@ -17,5 +18,9 @@ public class ComprasDelegate {
 
     private ComprasDelegate() throws Exception {
         sistemaComprasRepository = (SistemaComprasRepository) Naming.lookup("//127.0.0.1/compras");
+    }
+
+    public void generarOrdenCompra(Long articuloId, Long pedidoId) throws RemoteException {
+        sistemaComprasRepository.generarOrdenCompra(articuloId, pedidoId);
     }
 }
