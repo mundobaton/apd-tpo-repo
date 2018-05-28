@@ -1,9 +1,6 @@
 package edu.uade.apd.tpo.repository;
 
-import edu.uade.apd.tpo.repository.stub.ClienteStub;
-import edu.uade.apd.tpo.repository.stub.CondIvaStub;
-import edu.uade.apd.tpo.repository.stub.RolStub;
-import edu.uade.apd.tpo.repository.stub.ZonaStub;
+import edu.uade.apd.tpo.repository.stub.*;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -68,4 +65,9 @@ public class AdministracionDelegate {
     public List<ClienteStub> getClientes() throws RemoteException {
         return sistemaAdministracionRepository.getClientes();
     }
+
+    public List<PedidoStub> obtenerPedidosPendientes() throws RemoteException {
+        return sistemaAdministracionRepository.obtenerPedidosPendientes();
+    }
+
 }

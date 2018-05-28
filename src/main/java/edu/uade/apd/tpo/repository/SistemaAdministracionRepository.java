@@ -32,4 +32,6 @@ public interface SistemaAdministracionRepository extends Remote {
 
     List<ClienteStub> getClientes() throws RemoteException;
 
-}
+    List<PedidoStub> obtenerPedidosPendientes() throws RemoteException;
+
+    }
