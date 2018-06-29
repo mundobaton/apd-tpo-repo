@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository.delegate;
 
 import edu.uade.apd.tpo.repository.SistemaAdministracionRepository;
+import edu.uade.apd.tpo.repository.dto.RolDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
@@ -23,6 +24,10 @@ public class AdministracionDelegate {
 
     public void crearCliente(String nombreUsuario, String password, String calle, int numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteBusinessException {
         sistemaAdministracionRepository.crearCliente(nombreUsuario, password, calle, numero, localidad, provincia, codPostal, saldo, credito);
+    }
+
+    public void crearUsuario(String legajo, String password, RolDTO rol) throws RemoteBusinessException {
+        sistemaAdministracionRepository.crearUsuario(legajo, password, rol);
     }
 
 }
