@@ -33,4 +33,13 @@ public class DepositoDelegate {
 
     }
 
+    public ArticuloDTO findArticuloById(Long articuloId) throws RemoteBusinessException {
+        try {
+            ArticuloDTO articuloDTO = sistemaDepositoRepository.findArticuloById(articuloId);
+            return articuloDTO;
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
 }

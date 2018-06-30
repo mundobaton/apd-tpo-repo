@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface SistemaDepositoRepository extends Remote {
 
-    public List<ArticuloDTO> getArticulos() throws RemoteException;
+    List<ArticuloDTO> getArticulos() throws RemoteException;
+
+    ArticuloDTO findArticuloById(Long articuloId) throws RemoteException;
 
 }
