@@ -1,0 +1,44 @@
+package edu.uade.apd.tpo.repository.delegate;
+
+import edu.uade.apd.tpo.repository.SistemaDespachoRepository;
+import edu.uade.apd.tpo.repository.SistemaFacturacionRepository;
+import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
+
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+
+public class FacturacionDelegate {
+
+    private static FacturacionDelegate instance;
+    private SistemaFacturacionRepository sistemaFacturacionRepository;
+
+    private FacturacionDelegate() throws Exception {
+        this.sistemaFacturacionRepository = (SistemaFacturacionRepository) Naming.lookup("//127.0.0.1/facturacion");
+    }
+
+    public static FacturacionDelegate getInstance() throws Exception {
+        if (instance == null) {
+            instance = new FacturacionDelegate();
+        }
+        return instance;
+    }
+
+    public void facturar(Long pedidoId) throws RemoteBusinessException {
+        try {
+            sistemaFacturacionRepository.facturar(pedidoId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+
+    }
+
+    public void pagarFactura(Long facturaId, Float importe) throws RemoteBusinessException {
+        try {
+            sistemaFacturacionRepository.pagarFactura(facturaId, importe);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+
+}
