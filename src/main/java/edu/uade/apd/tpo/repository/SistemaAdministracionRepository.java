@@ -18,4 +18,16 @@ public interface SistemaAdministracionRepository extends Remote {
     UsuarioDTO loginUsuario(String legajo, String password) throws RemoteException;
 
     ClienteDTO findClienteById(Long clienteId) throws RemoteException;
+
+    Long crearPedido(String email, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteException;
+
+    void agregarItemPedido(Long pedidoId, Long articuloId, int cantidad) throws RemoteException;
+
+    void finalizarCargaItems(Long pedidoId) throws RemoteException;
+
+    void aprobarPedido(Long pedidoId, String mensaje) throws RemoteException;
+
+    void aprobarPedido(Long pedidoId) throws RemoteException;
+
+    void rechazarPedido(Long pedidoId, String mensaje) throws RemoteException;
 }

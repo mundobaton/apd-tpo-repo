@@ -67,4 +67,51 @@ public class AdministracionDelegate {
         }
     }
 
+    public Long crearPedido(String email, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteBusinessException {
+        try {
+            return sistemaAdministracionRepository.crearPedido(email, calle, numero, localidad, provincia, codPostal);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+    public void agregarItemPedido(Long pedidoId, Long articuloId, int cantidad) throws RemoteBusinessException {
+        try {
+            sistemaAdministracionRepository.agregarItemPedido(pedidoId, articuloId, cantidad);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+    public void finalizarCargaItems(Long pedidoId) throws RemoteBusinessException {
+        try {
+            sistemaAdministracionRepository.finalizarCargaItems(pedidoId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+    public void aprobarPedido(Long pedidoId, String mensaje) throws RemoteBusinessException {
+        try {
+            sistemaAdministracionRepository.aprobarPedido(pedidoId, mensaje);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+    public void aprobarPedido(Long pedidoId) throws RemoteBusinessException {
+        try {
+            sistemaAdministracionRepository.aprobarPedido(pedidoId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+    public void rechazarPedido(Long pedidoId, String mensaje) throws RemoteBusinessException {
+        try {
+            sistemaAdministracionRepository.rechazarPedido(pedidoId, mensaje);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
 }
