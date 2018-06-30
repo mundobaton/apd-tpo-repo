@@ -5,6 +5,7 @@ import edu.uade.apd.tpo.repository.dto.ArticuloDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 import java.util.List;
 
 public class DepositoDelegate {
@@ -24,7 +25,12 @@ public class DepositoDelegate {
     }
 
     public List<ArticuloDTO> getArticulos() throws RemoteBusinessException {
-        return sistemaDepositoRepository.getArticulos();
+        try {
+            return sistemaDepositoRepository.getArticulos();
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+
     }
 
 }

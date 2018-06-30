@@ -6,6 +6,7 @@ import edu.uade.apd.tpo.repository.dto.RolDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 
 public class AdministracionDelegate {
 
@@ -24,15 +25,29 @@ public class AdministracionDelegate {
     }
 
     public void crearCliente(String nombreUsuario, String password, String calle, int numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteBusinessException {
-        sistemaAdministracionRepository.crearCliente(nombreUsuario, password, calle, numero, localidad, provincia, codPostal, saldo, credito);
+        try {
+            sistemaAdministracionRepository.crearCliente(nombreUsuario, password, calle, numero, localidad, provincia, codPostal, saldo, credito);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+
     }
 
     public void crearUsuario(String legajo, String password, RolDTO rol) throws RemoteBusinessException {
-        sistemaAdministracionRepository.crearUsuario(legajo, password, rol);
+        try {
+            sistemaAdministracionRepository.crearUsuario(legajo, password, rol);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+
     }
 
     public ClienteDTO login(String email, String password) throws RemoteBusinessException {
-        return sistemaAdministracionRepository.login(email, password);
+        try {
+            return sistemaAdministracionRepository.login(email, password);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
     }
 
 }
