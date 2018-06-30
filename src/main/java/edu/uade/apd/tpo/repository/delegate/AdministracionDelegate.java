@@ -3,6 +3,7 @@ package edu.uade.apd.tpo.repository.delegate;
 import edu.uade.apd.tpo.repository.SistemaAdministracionRepository;
 import edu.uade.apd.tpo.repository.dto.ClienteDTO;
 import edu.uade.apd.tpo.repository.dto.RolDTO;
+import edu.uade.apd.tpo.repository.dto.UsuarioDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
@@ -42,12 +43,21 @@ public class AdministracionDelegate {
 
     }
 
-    public ClienteDTO login(String email, String password) throws RemoteBusinessException {
+    public ClienteDTO loginCliente(String email, String password) throws RemoteBusinessException {
         try {
-            return sistemaAdministracionRepository.login(email, password);
+            return sistemaAdministracionRepository.loginCliente(email, password);
         } catch (RemoteException re) {
             throw new RemoteBusinessException(re.getMessage());
         }
+    }
+
+    public UsuarioDTO loginUsuario(String legajo, String password) throws RemoteBusinessException {
+        try {
+            return sistemaAdministracionRepository.loginUsuario(legajo, password);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+
     }
 
 }
