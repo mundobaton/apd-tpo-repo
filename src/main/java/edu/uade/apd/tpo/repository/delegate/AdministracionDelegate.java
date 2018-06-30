@@ -57,7 +57,14 @@ public class AdministracionDelegate {
         } catch (RemoteException re) {
             throw new RemoteBusinessException(re.getMessage());
         }
+    }
 
+    public ClienteDTO findClienteById(Long clienteId) throws RemoteBusinessException {
+        try {
+            return sistemaAdministracionRepository.findClienteById(clienteId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
     }
 
 }

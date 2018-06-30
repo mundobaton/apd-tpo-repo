@@ -16,4 +16,6 @@ public interface SistemaAdministracionRepository extends Remote {
     ClienteDTO loginCliente(String email, String password) throws RemoteException;
 
     UsuarioDTO loginUsuario(String legajo, String password) throws RemoteException;
+
+    ClienteDTO findClienteById(Long clienteId) throws RemoteException;
 }
