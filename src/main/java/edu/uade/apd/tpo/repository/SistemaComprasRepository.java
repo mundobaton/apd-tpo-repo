@@ -14,4 +14,6 @@ public interface SistemaComprasRepository extends Remote {
 
     List<OrdenCompraDTO> getOrdenesCompra() throws RemoteException;
 
+    OrdenCompraDTO findById(Long ordenCompraId) throws RemoteException;
+
 }

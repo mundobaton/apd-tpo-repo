@@ -47,6 +47,12 @@ public class ComprasDelegate {
             throw new RemoteBusinessException(re.getMessage());
         }
     }
-    
 
+    public OrdenCompraDTO obtenerPorId(Long ordenCompraId) throws RemoteBusinessException {
+        try {
+            return sistemaComprasRepository.findById(ordenCompraId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
 }
