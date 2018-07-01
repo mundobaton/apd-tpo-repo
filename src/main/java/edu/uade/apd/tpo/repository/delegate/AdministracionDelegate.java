@@ -25,9 +25,9 @@ public class AdministracionDelegate {
         return instance;
     }
 
-    public void crearCliente(String nombreUsuario, String password, String calle, int numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteBusinessException {
+    public void crearCliente(String email, String nombre, Long cuit, String password, String calle, int numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteBusinessException {
         try {
-            sistemaAdministracionRepository.crearCliente(nombreUsuario, password, calle, numero, localidad, provincia, codPostal, saldo, credito);
+            sistemaAdministracionRepository.crearCliente(email, nombre, cuit, password, calle, numero, localidad, provincia, codPostal, saldo, credito);
         } catch (RemoteException re) {
             throw new RemoteBusinessException(re.getMessage());
         }

@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
 
 public interface SistemaAdministracionRepository extends Remote {
 
-    void crearCliente(String nombreUsuario, String password, String calle, int numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteException;
+    void crearCliente(String email, String nombre, Long cuit, String password, String calle, int numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteException;
 
     void crearUsuario(String legajo, String password, RolDTO rol) throws RemoteException;
 
