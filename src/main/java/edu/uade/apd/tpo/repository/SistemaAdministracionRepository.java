@@ -19,7 +19,7 @@ public interface SistemaAdministracionRepository extends Remote {
 
     ClienteDTO findClienteById(Long clienteId) throws RemoteException;
 
-    Long crearPedido(String email, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteException;
+    Long crearPedido(Long clienteId, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteException;
 
     void agregarItemPedido(Long pedidoId, Long articuloId, int cantidad) throws RemoteException;
 

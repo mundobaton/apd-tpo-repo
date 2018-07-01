@@ -67,9 +67,9 @@ public class AdministracionDelegate {
         }
     }
 
-    public Long crearPedido(String email, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteBusinessException {
+    public Long crearPedido(Long clienteId, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteBusinessException {
         try {
-            return sistemaAdministracionRepository.crearPedido(email, calle, numero, localidad, provincia, codPostal);
+            return sistemaAdministracionRepository.crearPedido(clienteId, calle, numero, localidad, provincia, codPostal);
         } catch (RemoteException re) {
             throw new RemoteBusinessException(re.getMessage());
         }
