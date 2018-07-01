@@ -6,6 +6,8 @@ import java.util.List;
 public class ClienteDTO implements Serializable {
 
     private Long id;
+    private String nombre;
+    private Long cuit;
     private String nombreUsuario;
     private String password;
     private CuentaCorrienteDTO cuentaCorriente;
@@ -59,4 +61,21 @@ public class ClienteDTO implements Serializable {
     public void setPedidos(List<PedidoDTO> pedidos) {
         this.pedidos = pedidos;
     }
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Long getCuit() {
+		return cuit;
+	}
+
+	public void setCuit(Long cuit) {
+		this.cuit = cuit;
+	}
+    
 }
