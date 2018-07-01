@@ -13,6 +13,7 @@ public class PedidoDTO implements Serializable {
     private Date fechaPedido;
     private Date fechaDespacho;
     private EstadoPedidoDTO estado;
+    private Float precioBruto;
 
     public Long getId() {
         return id;
@@ -68,5 +69,13 @@ public class PedidoDTO implements Serializable {
 
     public void setEstado(EstadoPedidoDTO estado) {
         this.estado = estado;
+    }
+
+    public Float getPrecioBruto() {
+        return precioBruto;
+    }
+
+    public void setPrecioBruto(Float precioBruto) {
+        this.precioBruto = precioBruto;
     }
 }
