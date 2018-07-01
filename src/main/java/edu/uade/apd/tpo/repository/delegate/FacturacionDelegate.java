@@ -2,10 +2,12 @@ package edu.uade.apd.tpo.repository.delegate;
 
 import edu.uade.apd.tpo.repository.SistemaDespachoRepository;
 import edu.uade.apd.tpo.repository.SistemaFacturacionRepository;
+import edu.uade.apd.tpo.repository.dto.PedidoDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public class FacturacionDelegate {
 
@@ -32,13 +34,28 @@ public class FacturacionDelegate {
 
     }
 
-    public void pagarFactura(Long facturaId, Float importe) throws RemoteBusinessException {
+    public void pagarFactura(Long facturaId, Float importe, Long clienteId) throws RemoteBusinessException {
         try {
-            sistemaFacturacionRepository.pagarFactura(facturaId, importe);
+            sistemaFacturacionRepository.pagarFactura(facturaId, importe, clienteId);
         } catch (RemoteException re) {
             throw new RemoteBusinessException(re.getMessage());
         }
     }
 
+    public List<PedidoDTO> obtenerPedidosFacturar() throws RemoteBusinessException {
+        try {
+            return sistemaFacturacionRepository.obtenerPedidosFacturar();
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+    public void pagarImporte(Float importe, Long clienteId) throws RemoteBusinessException {
+        try {
+            sistemaFacturacionRepository.pagarImporte(importe, clienteId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
 
 }
