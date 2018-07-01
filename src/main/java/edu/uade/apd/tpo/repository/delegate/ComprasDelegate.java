@@ -1,10 +1,12 @@
 package edu.uade.apd.tpo.repository.delegate;
 
 import edu.uade.apd.tpo.repository.SistemaComprasRepository;
+import edu.uade.apd.tpo.repository.dto.OrdenCompraDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public class ComprasDelegate {
 
@@ -33,6 +35,14 @@ public class ComprasDelegate {
     public void procesarOrdenesCompra() throws RemoteBusinessException {
         try {
             sistemaComprasRepository.procesarOrdenesCompra();
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.getMessage());
+        }
+    }
+
+    public List<OrdenCompraDTO> obtenerOrdenesCompra() throws RemoteBusinessException {
+        try {
+            return sistemaComprasRepository.getOrdenesCompra();
         } catch (RemoteException re) {
             throw new RemoteBusinessException(re.getMessage());
         }
