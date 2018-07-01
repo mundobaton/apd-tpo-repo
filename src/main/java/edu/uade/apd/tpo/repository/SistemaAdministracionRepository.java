@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository;
 
 import edu.uade.apd.tpo.repository.dto.ClienteDTO;
+import edu.uade.apd.tpo.repository.dto.PedidoDTO;
 import edu.uade.apd.tpo.repository.dto.RolDTO;
 import edu.uade.apd.tpo.repository.dto.UsuarioDTO;
 
@@ -18,6 +19,8 @@ public interface SistemaAdministracionRepository extends Remote {
     UsuarioDTO loginUsuario(String legajo, String password) throws RemoteException;
 
     ClienteDTO findClienteById(Long clienteId) throws RemoteException;
+    
+    PedidoDTO findPedidoById(Long pedidoId) throws RemoteException;
 
     Long crearPedido(Long clienteId, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteException;
 
