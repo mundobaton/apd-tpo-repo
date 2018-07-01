@@ -47,5 +47,6 @@ public class ComprasDelegate {
             throw new RemoteBusinessException(re.getMessage());
         }
     }
+    
 
 }
