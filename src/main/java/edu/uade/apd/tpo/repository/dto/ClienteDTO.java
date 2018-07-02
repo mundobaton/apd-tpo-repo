@@ -8,7 +8,7 @@ public class ClienteDTO implements Serializable {
     private Long id;
     private String nombre;
     private Long cuit;
-    private String nombreUsuario;
+    private String email;
     private String password;
     private CuentaCorrienteDTO cuentaCorriente;
     private DomicilioDTO domicilio;
@@ -22,12 +22,12 @@ public class ClienteDTO implements Serializable {
         this.id = id;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

@@ -33,7 +33,7 @@ public class AdministracionDelegate {
 			sistemaAdministracionRepository.crearCliente(email, nombre, cuit, password, calle, numero, localidad,
 					provincia, codPostal, saldo, credito);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 
 	}
@@ -42,7 +42,7 @@ public class AdministracionDelegate {
 		try {
 			sistemaAdministracionRepository.crearUsuario(legajo, password, rol);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 
 	}
@@ -51,7 +51,7 @@ public class AdministracionDelegate {
 		try {
 			return sistemaAdministracionRepository.loginCliente(email, password);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -59,7 +59,7 @@ public class AdministracionDelegate {
 		try {
 			return sistemaAdministracionRepository.loginUsuario(legajo, password);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -67,7 +67,7 @@ public class AdministracionDelegate {
 		try {
 			return sistemaAdministracionRepository.findClienteById(clienteId);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -77,7 +77,7 @@ public class AdministracionDelegate {
 			return sistemaAdministracionRepository.crearPedido(clienteId, calle, numero, localidad, provincia,
 					codPostal);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -85,7 +85,7 @@ public class AdministracionDelegate {
 		try {
 			sistemaAdministracionRepository.agregarItemPedido(pedidoId, articuloId, cantidad);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -93,7 +93,7 @@ public class AdministracionDelegate {
 		try {
 			sistemaAdministracionRepository.finalizarCargaItems(pedidoId);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -101,7 +101,7 @@ public class AdministracionDelegate {
 		try {
 			sistemaAdministracionRepository.aprobarPedido(pedidoId, mensaje);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -109,7 +109,7 @@ public class AdministracionDelegate {
 		try {
 			sistemaAdministracionRepository.aprobarPedido(pedidoId);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -117,7 +117,7 @@ public class AdministracionDelegate {
 		try {
 			sistemaAdministracionRepository.rechazarPedido(pedidoId, mensaje);
 		} catch (RemoteException re) {
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
 
@@ -125,7 +125,7 @@ public class AdministracionDelegate {
 	   try {
 		   return sistemaAdministracionRepository.findPedidoById(pedidoId);
 	   }catch (RemoteException re){
-			throw new RemoteBusinessException(re.getMessage());
+			throw new RemoteBusinessException(re.detail.getMessage());
 	   }
    }
 
