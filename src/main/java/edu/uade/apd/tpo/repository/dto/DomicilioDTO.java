@@ -6,7 +6,7 @@ public class DomicilioDTO implements Serializable {
 
     private Long id;
     private String calle;
-    private int numero;
+    private String numero;
     private String localidad;
     private String provincia;
     private String codigoPostal;
@@ -27,11 +27,11 @@ public class DomicilioDTO implements Serializable {
         this.calle = calle;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

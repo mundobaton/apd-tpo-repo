@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface SistemaAdministracionRepository extends Remote {
 
-    void crearCliente(String email, String nombre, Long cuit, String password, String calle, int numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteException;
+    void crearCliente(String email, String nombre, Long cuit, String password, String calle, String numero, String localidad, String provincia, String codPostal, float saldo, float credito) throws RemoteException;
 
     void crearUsuario(String legajo, String password, RolDTO rol) throws RemoteException;
 
@@ -23,7 +23,7 @@ public interface SistemaAdministracionRepository extends Remote {
     
     PedidoDTO findPedidoById(Long pedidoId) throws RemoteException;
 
-    Long crearPedido(Long clienteId, String calle, int numero, String localidad, String provincia, String codPostal) throws RemoteException;
+    Long crearPedido(Long clienteId, String calle, String numero, String localidad, String provincia, String codPostal) throws RemoteException;
 
     void agregarItemPedido(Long pedidoId, Long articuloId, int cantidad) throws RemoteException;
 

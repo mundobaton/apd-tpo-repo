@@ -27,7 +27,7 @@ public class AdministracionDelegate {
 		return instance;
 	}
 
-	public void crearCliente(String email, String nombre, Long cuit, String password, String calle, int numero,
+	public void crearCliente(String email, String nombre, Long cuit, String password, String calle, String numero,
 			String localidad, String provincia, String codPostal, float saldo, float credito)
 			throws RemoteBusinessException {
 		try {
@@ -72,7 +72,7 @@ public class AdministracionDelegate {
 		}
 	}
 
-	public Long crearPedido(Long clienteId, String calle, int numero, String localidad, String provincia,
+	public Long crearPedido(Long clienteId, String calle, String numero, String localidad, String provincia,
 			String codPostal) throws RemoteBusinessException {
 		try {
 			return sistemaAdministracionRepository.crearPedido(clienteId, calle, numero, localidad, provincia,
