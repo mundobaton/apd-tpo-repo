@@ -10,6 +10,7 @@ public class OrdenCompraDTO implements Serializable {
     private PedidoDTO pedido;
     private char estado;
     private Date fechaCreacion;
+    private String proveedor;
 
     public Long getId() {
         return id;
@@ -49,5 +50,13 @@ public class OrdenCompraDTO implements Serializable {
 
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public String getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(String proveedor) {
+        this.proveedor = proveedor;
     }
 }
