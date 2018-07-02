@@ -13,6 +13,7 @@ public class ClienteDTO implements Serializable {
     private CuentaCorrienteDTO cuentaCorriente;
     private DomicilioDTO domicilio;
     private List<PedidoDTO> pedidos;
+    private String condicionIva;
 
     public Long getId() {
         return id;
@@ -77,5 +78,12 @@ public class ClienteDTO implements Serializable {
 	public void setCuit(Long cuit) {
 		this.cuit = cuit;
 	}
-    
+
+    public String getCondicionIva() {
+        return condicionIva;
+    }
+
+    public void setCondicionIva(String condicionIva) {
+        this.condicionIva = condicionIva;
+    }
 }
