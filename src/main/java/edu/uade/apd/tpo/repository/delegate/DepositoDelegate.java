@@ -2,7 +2,6 @@ package edu.uade.apd.tpo.repository.delegate;
 
 import edu.uade.apd.tpo.repository.SistemaDepositoRepository;
 import edu.uade.apd.tpo.repository.dto.ArticuloDTO;
-import edu.uade.apd.tpo.repository.dto.ReposicionDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
@@ -42,21 +41,4 @@ public class DepositoDelegate {
             throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
-
-    public List<ReposicionDTO> obtenerItemsReposicion() throws RemoteBusinessException {
-        try {
-            return sistemaDepositoRepository.getReposiciones();
-        } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.detail.getMessage());
-        }
-    }
-
-    public void reponer(Long reposicionId, int cant) throws RemoteBusinessException {
-        try {
-            sistemaDepositoRepository.reponer(reposicionId, cant);
-        } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.detail.getMessage());
-        }
-    }
-
 }
