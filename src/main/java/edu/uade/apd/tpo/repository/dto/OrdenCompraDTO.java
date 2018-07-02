@@ -11,6 +11,7 @@ public class OrdenCompraDTO implements Serializable {
     private char estado;
     private Date fechaCreacion;
     private String proveedor;
+    private ReposicionDTO reposicion;
 
     public Long getId() {
         return id;
@@ -58,5 +59,13 @@ public class OrdenCompraDTO implements Serializable {
 
     public void setProveedor(String proveedor) {
         this.proveedor = proveedor;
+    }
+
+    public ReposicionDTO getReposicion() {
+        return reposicion;
+    }
+
+    public void setReposicion(ReposicionDTO reposicion) {
+        this.reposicion = reposicion;
     }
 }

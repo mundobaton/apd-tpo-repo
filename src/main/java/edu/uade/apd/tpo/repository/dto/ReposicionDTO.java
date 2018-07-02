@@ -5,8 +5,7 @@ import java.io.Serializable;
 public class ReposicionDTO implements Serializable {
 
     private Long id;
-    private ItemPedidoDTO itemPedido;
-    private PedidoDTO pedido;
+    private OrdenCompraDTO ordenCompra;
     private int cantidad;
     private char estado;
 
@@ -18,20 +17,12 @@ public class ReposicionDTO implements Serializable {
         this.id = id;
     }
 
-    public ItemPedidoDTO getItemPedido() {
-        return itemPedido;
+    public OrdenCompraDTO getOrdenCompra() {
+        return ordenCompra;
     }
 
-    public void setItemPedido(ItemPedidoDTO itemPedido) {
-        this.itemPedido = itemPedido;
-    }
-
-    public PedidoDTO getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(PedidoDTO pedido) {
-        this.pedido = pedido;
+    public void setOrdenCompra(OrdenCompraDTO ordenCompra) {
+        this.ordenCompra = ordenCompra;
     }
 
     public int getCantidad() {
