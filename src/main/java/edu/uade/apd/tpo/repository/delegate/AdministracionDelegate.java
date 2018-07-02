@@ -71,6 +71,14 @@ public class AdministracionDelegate {
 			throw new RemoteBusinessException(re.detail.getMessage());
 		}
 	}
+	
+	public ClienteDTO findClienteByEmail(String email) throws RemoteBusinessException {
+		try {
+			return sistemaAdministracionRepository.findClienteByEmail(email);
+		} catch (RemoteException re) {
+			throw new RemoteBusinessException(re.detail.getMessage());
+		}
+	}
 
 	public Long crearPedido(Long clienteId, String calle, String numero, String localidad, String provincia,
 			String codPostal) throws RemoteBusinessException {
