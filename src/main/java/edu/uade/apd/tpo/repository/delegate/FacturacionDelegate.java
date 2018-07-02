@@ -66,4 +66,12 @@ public class FacturacionDelegate {
         }
     }
 
+    public FacturaDTO obtenerFacturaPorId(Long facturaId) throws RemoteBusinessException {
+        try {
+            return sistemaFacturacionRepository.obtenerFacturaPorId(facturaId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.detail.getMessage());
+        }
+    }
+
 }

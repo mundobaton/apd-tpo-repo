@@ -19,4 +19,6 @@ public interface SistemaFacturacionRepository extends Remote {
 
     List<FacturaDTO> obtenerFacturas() throws RemoteException;
 
+    FacturaDTO obtenerFacturaPorId(Long facturaId) throws RemoteException;
+
 }
