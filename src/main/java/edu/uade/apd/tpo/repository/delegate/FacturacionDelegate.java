@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository.delegate;
 
 import edu.uade.apd.tpo.repository.SistemaFacturacionRepository;
+import edu.uade.apd.tpo.repository.dto.FacturaDTO;
 import edu.uade.apd.tpo.repository.dto.PedidoDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
@@ -52,6 +53,14 @@ public class FacturacionDelegate {
     public void pagarImporte(Float importe, Long clienteId) throws RemoteBusinessException {
         try {
             sistemaFacturacionRepository.pagarImporte(importe, clienteId);
+        } catch (RemoteException re) {
+            throw new RemoteBusinessException(re.detail.getMessage());
+        }
+    }
+
+    public List<FacturaDTO> obtenerFacturas() throws RemoteBusinessException {
+        try {
+            return sistemaFacturacionRepository.obtenerFacturas();
         } catch (RemoteException re) {
             throw new RemoteBusinessException(re.detail.getMessage());
         }

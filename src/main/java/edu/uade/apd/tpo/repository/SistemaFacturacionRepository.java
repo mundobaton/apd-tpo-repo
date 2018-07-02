@@ -1,5 +1,6 @@
 package edu.uade.apd.tpo.repository;
 
+import edu.uade.apd.tpo.repository.dto.FacturaDTO;
 import edu.uade.apd.tpo.repository.dto.PedidoDTO;
 
 import java.rmi.Remote;
@@ -15,5 +16,7 @@ public interface SistemaFacturacionRepository extends Remote {
     List<PedidoDTO> obtenerPedidosFacturar() throws RemoteException;
 
     void pagarImporte(Float importe, Long clienteId) throws RemoteException;
+
+    List<FacturaDTO> obtenerFacturas() throws RemoteException;
 
 }
