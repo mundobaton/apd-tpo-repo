@@ -36,4 +36,7 @@ public interface SistemaAdministracionRepository extends Remote {
     void rechazarPedido(Long pedidoId, String mensaje) throws RemoteException;
 
 	List<ClienteDTO> getClientes() throws RemoteException;
+    
+    List<PedidoDTO> obtenerPedidosPendientes() throws RemoteException;
+
 }

@@ -1,6 +1,5 @@
 package edu.uade.apd.tpo.repository.delegate;
 
-import edu.uade.apd.tpo.repository.SistemaDespachoRepository;
 import edu.uade.apd.tpo.repository.SistemaFacturacionRepository;
 import edu.uade.apd.tpo.repository.dto.PedidoDTO;
 import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
@@ -29,7 +28,7 @@ public class FacturacionDelegate {
         try {
             sistemaFacturacionRepository.facturar(pedidoId);
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
 
     }
@@ -38,7 +37,7 @@ public class FacturacionDelegate {
         try {
             sistemaFacturacionRepository.pagarFactura(facturaId, importe, clienteId);
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -46,7 +45,7 @@ public class FacturacionDelegate {
         try {
             return sistemaFacturacionRepository.obtenerPedidosFacturar();
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -54,7 +53,7 @@ public class FacturacionDelegate {
         try {
             sistemaFacturacionRepository.pagarImporte(importe, clienteId);
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 

@@ -29,7 +29,7 @@ public class DepositoDelegate {
         try {
             return sistemaDepositoRepository.getArticulos();
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
 
     }
@@ -39,7 +39,7 @@ public class DepositoDelegate {
             ArticuloDTO articuloDTO = sistemaDepositoRepository.findArticuloById(articuloId);
             return articuloDTO;
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -47,7 +47,7 @@ public class DepositoDelegate {
         try {
             return sistemaDepositoRepository.getReposiciones();
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -55,7 +55,7 @@ public class DepositoDelegate {
         try {
             sistemaDepositoRepository.reponer(reposicionId, cant);
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 

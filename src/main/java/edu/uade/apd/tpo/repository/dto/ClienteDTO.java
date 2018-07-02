@@ -13,6 +13,7 @@ public class ClienteDTO implements Serializable {
     private CuentaCorrienteDTO cuentaCorriente;
     private DomicilioDTO domicilio;
     private List<PedidoDTO> pedidos;
+    private String condicionIva;
 
 
     public Long getId() {
@@ -23,12 +24,12 @@ public class ClienteDTO implements Serializable {
         this.id = id;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -78,5 +79,12 @@ public class ClienteDTO implements Serializable {
 	public void setCuit(Long cuit) {
 		this.cuit = cuit;
 	}
-    
+
+    public String getCondicionIva() {
+        return condicionIva;
+    }
+
+    public void setCondicionIva(String condicionIva) {
+        this.condicionIva = condicionIva;
+    }
 }
