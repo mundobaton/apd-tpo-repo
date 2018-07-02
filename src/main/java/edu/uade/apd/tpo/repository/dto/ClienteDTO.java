@@ -8,7 +8,7 @@ public class ClienteDTO implements Serializable {
     private Long id;
     private String nombre;
     public Long cuit;
-    private String nombreUsuario;
+    private String email;
     private String password;
     private CuentaCorrienteDTO cuentaCorriente;
     private DomicilioDTO domicilio;
