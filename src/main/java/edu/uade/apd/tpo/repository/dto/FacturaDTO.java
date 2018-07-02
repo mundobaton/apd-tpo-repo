@@ -1,6 +1,7 @@
 package edu.uade.apd.tpo.repository.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class FacturaDTO implements Serializable {
 
@@ -9,6 +10,7 @@ public class FacturaDTO implements Serializable {
     private PedidoDTO pedido;
     private Float total;
     private char estado;
+    private Date fecha;
 
     public Long getId() {
         return id;
@@ -49,4 +51,13 @@ public class FacturaDTO implements Serializable {
     public void setEstado(char estado) {
         this.estado = estado;
     }
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+    
 }
