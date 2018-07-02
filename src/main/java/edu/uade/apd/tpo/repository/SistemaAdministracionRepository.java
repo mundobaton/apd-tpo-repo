@@ -7,6 +7,7 @@ import edu.uade.apd.tpo.repository.dto.UsuarioDTO;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public interface SistemaAdministracionRepository extends Remote {
 
@@ -33,4 +34,6 @@ public interface SistemaAdministracionRepository extends Remote {
     void aprobarPedido(Long pedidoId) throws RemoteException;
 
     void rechazarPedido(Long pedidoId, String mensaje) throws RemoteException;
+
+	List<ClienteDTO> getClientes() throws RemoteException;
 }

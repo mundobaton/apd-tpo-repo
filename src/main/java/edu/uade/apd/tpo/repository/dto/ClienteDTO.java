@@ -7,12 +7,13 @@ public class ClienteDTO implements Serializable {
 
     private Long id;
     private String nombre;
-    private Long cuit;
+    public Long cuit;
     private String nombreUsuario;
     private String password;
     private CuentaCorrienteDTO cuentaCorriente;
     private DomicilioDTO domicilio;
     private List<PedidoDTO> pedidos;
+
 
     public Long getId() {
         return id;
