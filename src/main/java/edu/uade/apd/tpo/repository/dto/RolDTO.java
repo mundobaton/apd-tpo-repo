@@ -5,6 +5,7 @@ import java.io.Serializable;
 public enum RolDTO implements Serializable {
 
     ADMINISTRACION,
+    DEPOSITO,
     DESPACHO,
     FACTURACION,
     COMPRAS
