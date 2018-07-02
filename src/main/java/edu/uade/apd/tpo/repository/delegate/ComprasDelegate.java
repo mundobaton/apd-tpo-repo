@@ -28,7 +28,7 @@ public class ComprasDelegate {
         try {
             sistemaComprasRepository.procesarOrdenCompra(ordenCompraId);
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -36,7 +36,7 @@ public class ComprasDelegate {
         try {
             sistemaComprasRepository.procesarOrdenesCompra();
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -44,7 +44,7 @@ public class ComprasDelegate {
         try {
             return sistemaComprasRepository.getOrdenesCompra();
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -52,7 +52,7 @@ public class ComprasDelegate {
         try {
             return sistemaComprasRepository.findById(ordenCompraId);
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 }

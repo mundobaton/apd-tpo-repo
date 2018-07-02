@@ -28,7 +28,7 @@ public class DespachoDelegate {
         try {
             sistemaDespachoRepository.despacharPedido(pedidoId);
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 
@@ -36,7 +36,7 @@ public class DespachoDelegate {
         try {
             return sistemaDespachoRepository.obtenerPedidosCompletos();
         } catch (RemoteException re) {
-            throw new RemoteBusinessException(re.getMessage());
+            throw new RemoteBusinessException(re.detail.getMessage());
         }
     }
 }
