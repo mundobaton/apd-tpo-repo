@@ -9,6 +9,7 @@ import edu.uade.apd.tpo.repository.exception.RemoteBusinessException;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.List;
 
 public class AdministracionDelegate {
 
@@ -127,6 +128,14 @@ public class AdministracionDelegate {
 	   }catch (RemoteException re){
 			throw new RemoteBusinessException(re.detail.getMessage());
 	   }
-   }
+	}
+	
+	public List<PedidoDTO> obtenerPedidosPendientes() throws RemoteBusinessException{
+		try {
+			return sistemaAdministracionRepository.obtenerPedidosPendientes();
+	    }catch (RemoteException re){
+			throw new RemoteBusinessException(re.detail.getMessage());
+	    }
+	}
 
 }
